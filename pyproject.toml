@@ -1,0 +1,29 @@
+# Packaging metadata so this library can be installed with pip
+# (e.g. `pip install -e .`). Added in the tomas-gr fork; the upstream
+# Bogacz-Group repository ships without one.
+
+# Which tool pip should use to build the package.
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+# Information about the package itself.
+[project]
+name = "predictive_coding"
+version = "0.1.0"
+description = "Predictive coding networks in PyTorch (Bogacz Group)"
+readme = "README.md"
+requires-python = ">=3.9"
+# Libraries imported by the code in predictive_coding/.
+dependencies = [
+    "torch",
+    "numpy",
+    "matplotlib",
+    "pandas",
+    "seaborn",
+    "tqdm",
+]
+
+# Only the predictive_coding/ folder is the package; the notebooks are not.
+[tool.setuptools]
+packages = ["predictive_coding"]
